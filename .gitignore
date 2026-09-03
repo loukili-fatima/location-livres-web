@@ -1,0 +1,22 @@
+# Laravel
+/gestion-livres/vendor/
+/gestion-livres/node_modules/
+/gestion-livres/.env
+/gestion-livres/storage/*.key
+/gestion-livres/storage/logs/*.log
+/gestion-livres/bootstrap/cache/*.php
+/gestion-livres/public/hot
+/gestion-livres/public/storage
+
+# React frontend
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env
+
+# ML
+/gestion-livres/ml/__pycache__/
+/gestion-livres/ml/*.pkl
+
+# General
+.DS_Store
+Thumbs.db
