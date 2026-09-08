@@ -35,6 +35,7 @@ function Navigation() {
         <Link to="/mes-locations" style={lienStyle}>Mes locations</Link>
         <Link to="/reporting" style={lienStyle}>Reporting</Link>
         <Link to="/ma-prediction" style={lienStyle}>Ma prediction</Link>
+        <Link to="/categorie-favorite" style={lienStyle}>Categorie favorite</Link>
       </div>
       <button
         onClick={deconnexion}

@@ -96,6 +96,64 @@ function Reporting() {
           ))}
         </tbody>
       </table>
+          <h2>Risque de retard (locations en cours)</h2>
+      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <thead>
+          <tr style={{ textAlign: "left", borderBottom: "2px solid #ddd" }}>
+            <th style={{ padding: "8px" }}>Utilisateur</th>
+            <th style={{ padding: "8px" }}>Livre</th>
+            <th style={{ padding: "8px" }}>Retour prevu</th>
+            <th style={{ padding: "8px" }}>Risque</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.risques_retard.map((item) => {
+            const couleur =
+              item.risque_retard >= 60 ? "#d9534f" :
+              item.risque_retard >= 35 ? "#f0ad4e" :
+              "#5cb85c";
+            return (
+              <tr key={item.rental_id} style={{ borderBottom: "1px solid #eee" }}>
+                <td style={{ padding: "8px" }}>{item.user}</td>
+                <td style={{ padding: "8px" }}>{item.livre}</td>
+                <td style={{ padding: "8px" }}>{item.date_retour_prevue}</td>
+                <td style={{ padding: "8px", color: couleur, fontWeight: "bold" }}>
+                  {item.risque_retard}%
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+          <h2>Risque de retard (locations en cours)</h2>
+      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+        <thead>
+          <tr style={{ textAlign: "left", borderBottom: "2px solid #ddd" }}>
+            <th style={{ padding: "8px" }}>Utilisateur</th>
+            <th style={{ padding: "8px" }}>Livre</th>
+            <th style={{ padding: "8px" }}>Retour prevu</th>
+            <th style={{ padding: "8px" }}>Risque</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.risques_retard.map((item) => {
+            const couleur =
+              item.risque_retard >= 60 ? "#d9534f" :
+              item.risque_retard >= 35 ? "#f0ad4e" :
+              "#5cb85c";
+            return (
+              <tr key={item.rental_id} style={{ borderBottom: "1px solid #eee" }}>
+                <td style={{ padding: "8px" }}>{item.user}</td>
+                <td style={{ padding: "8px" }}>{item.livre}</td>
+                <td style={{ padding: "8px" }}>{item.date_retour_prevue}</td>
+                <td style={{ padding: "8px", color: couleur, fontWeight: "bold" }}>
+                  {item.risque_retard}%
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
