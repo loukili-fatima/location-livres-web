@@ -36,7 +36,7 @@
                 <label class="block text-sm font-medium">Catégorie</label>
                 <select name="category_id" class="mt-1 w-full border rounded p-2">
                     @foreach($categories as $category)
-                        <option value="{{ $category->id }}" {{ old('category_id', $book->category_id) == $category->id ? 'selected' : '' }}>
+                        <option value="{{ $category->id }}" {{ (' oldcategory_id', $book->category_id) == $category->id ? 'selected' : '' }}>
                             {{ $category->nom }}
                         </option>
                     @endforeach

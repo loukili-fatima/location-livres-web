@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BookController;
+use App\Http\Controllers\Api\CategorieFavoriteController;
 use App\Http\Controllers\Api\MlPredictionController;
 use App\Http\Controllers\Api\RentalController;
 use App\Http\Controllers\Api\ReportingController;
@@ -25,6 +26,7 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::post("/rentals/{rental}/return", [RentalController::class, "returnBook"]);
 
     Route::get("/ma-prediction", [MlPredictionController::class, "index"]);
+    Route::get("/categorie-favorite", [CategorieFavoriteController::class, "index"]);
 
     Route::middleware("admin")->group(function () {
         Route::get("/reporting", [ReportingController::class, "index"]);

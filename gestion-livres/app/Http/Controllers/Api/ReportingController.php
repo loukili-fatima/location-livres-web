@@ -51,7 +51,20 @@ class ReportingController extends Controller
                 return $item["penalite_totale"] > 0;
             })
             ->values();
-
+$risquesRetard = Rental::with(["user", "book"])
+    ->whereNotNull("risque_retard")
+    ->whereNull("date_retour_reelle")
+    ->orderByDesc("risque_retard")
+    ->get()
+    ->map(function ($rental) {
+        return [
+            "rental_id" => $rental->id,
+            "user" => optional($rental->user)->name,
+            "livre" => optional($rental->book)->titre,
+            "date_retour_prevue" => $rental->date_retour_prevue,
+            "risque_retard" => $rental->risque_retard,
+        ];
+    });
         return response()->json([
             "livres_populaires" => $livresPopulaires,
             "taux_disponibilite" => $tauxDisponibilite,
@@ -59,6 +72,7 @@ class ReportingController extends Controller
             "livres_disponibles" => $livresDisponibles,
             "locations_par_mois" => $locationsParMois,
             "penalites_par_utilisateur" => $penalitesParUtilisateur,
+            "risques_retard" => $risquesRetard,
         ]);
     }
 }

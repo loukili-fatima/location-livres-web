@@ -87,6 +87,5 @@ class ImportBooksFromOpenLibrary extends Command
 
         $this->info("Import terminé : {$totalImportes} livres réels ajoutés.");
 
-        return Command::SUCCESS;
-    }
-}
+        return Command :: SUCCESS
+   
