@@ -28,6 +28,8 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::get("/ma-prediction", [MlPredictionController::class, "index"]);
     Route::get("/categorie-favorite", [CategorieFavoriteController::class, "index"]);
 
+    Route::post("/search-by-cover", [App\Http\Controllers\Api\CoverSearchController::class, "search"]);
+
     Route::middleware("admin")->group(function () {
         Route::get("/reporting", [ReportingController::class, "index"]);
     });

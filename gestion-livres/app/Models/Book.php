@@ -11,6 +11,10 @@ class Book extends Model
 
     protected $fillable = ['titre', 'isbn', 'disponible', 'author_id', 'category_id'];
 
+    protected $casts = [
+        'disponible' => 'boolean',
+    ];
+
     public function author()
     {
         return $this->belongsTo(Author::class);

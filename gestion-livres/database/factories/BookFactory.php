@@ -14,8 +14,8 @@ class BookFactory extends Factory
             'titre' => ucfirst($this->faker->words(3, true)),
             'isbn' => $this->faker->unique()->isbn13(),
             'disponible' => $this->faker->boolean(70),
-            'author_id' => Author::inRandomOrder()->first()->id,
-            'category_id' => Category::inRandomOrder()->first()->id,
+            'author_id' => Author::inRandomOrder()->first()?->id ?? Author::factory(),
+            'category_id' => Category::inRandomOrder()->first()?->id ?? Category::factory(),
         ];
     }
 }
